@@ -13,6 +13,14 @@ app.use(cors({
   ],
   credentials: true
 }));
+// Handle preflight requests for all routes
+app.options('*', cors({
+  origin: [
+    'https://pixelfrontend-jade.vercel.app',
+    'http://localhost:5173'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // MongoDB connection
